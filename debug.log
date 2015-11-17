@@ -1,0 +1,6 @@
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = 'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+(0.001) QUERY = 'SELECT "BankApp_bankdetails"."bank_id", "BankApp_bankdetails"."bank_name" FROM "BankApp_bankdetails"' - PARAMS = (); args=()
+(0.000) QUERY = 'SELECT "BankApp_accountdetails"."account_id", "BankApp_accountdetails"."account_type", "BankApp_accountdetails"."userBankMap_id_id", "BankApp_accountdetails"."account_balance" FROM "BankApp_accountdetails"' - PARAMS = (); args=()
+(0.000) QUERY = 'SELECT "BankApp_userbankmap"."userBankMap_id", "BankApp_userbankmap"."user_id_id", "BankApp_userbankmap"."bank_id_id" FROM "BankApp_userbankmap" WHERE "BankApp_userbankmap"."userBankMap_id" = %s' - PARAMS = (144,); args=(144,)
+(0.000) QUERY = 'SELECT "BankApp_userdetails"."user_id", "BankApp_userdetails"."user_name" FROM "BankApp_userdetails" WHERE "BankApp_userdetails"."user_id" = %s' - PARAMS = (173,); args=(173,)

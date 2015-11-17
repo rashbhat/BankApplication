@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+    td {
+      text-align: center;
+      vertical-align: middle;
+     }
+  </style>
+ </head>
+<body>
+
+<h1>{{message}}</h1>
+
+
+ <form action="{% url 'login' %}" method="post" >
+{% csrf_token %}
+<label for="user_name"> User Name : </label>
+<input id ="user_name" type="text" name="user_name" >
+<br>
+<label for="user_pwd"> Password : </label>
+<input id ="user_pwd" type="text" name="user_pwd" >
+<br>
+<input type="submit" value="Submit">
+</form>
+  
+  </table>
+</body>
+</html>

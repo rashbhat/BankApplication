@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+    td {
+      text-align: center;
+      vertical-align: middle;
+     }
+span{ 
+	 display: inline-block;
+   text-align: right;
+   width: 100%;
+}
+  </style>
+ </head>
+<body>
+  <h1>{{title}}</h1>
+<span class="align-right"> <a href="{% url 'logout' %}" align="right">Logout</a></span>
+  <table>
+    <th> {{colDict.col1}} </th> <th> {{colDict.col2}}</th> <th>{{colDict.col3}}</th> <th>{{colDict.col4}}</th> <th> {{colDict.col5}} </th>
+    {% if accountList %}
+      {% for account in accountList %}
+      <tr>
+	<td >{{account.account_id}}</td>
+	<td ><a title="click to view user info" href="{% url 'userDetails' account.userBankMap_id.user_id_id %}"> 	{{account.userBankMap_id.user_id.user_name}}</a></td>
+	<td >{{account.account_type}}</td>
+	<td >{{account.account_balance}}</td>
+	<td ><a href="{% url 'viewTransc' account.account_id %}"> View Transactions</a>  </td>
+     </tr>
+     {% endfor %}
+   {% endif %}
+
+{% if userList %}
+      {% for user in userList %}
+      <tr>
+	<td >{{user.user_id}}</td>
+	<td >{{user.user_name}}</td>
+	
+    
+     {% endfor %}
+
+<td>
+<form method="post" action="{% url 'addUser' %}">
+
+	 {% csrf_token %}
+    {{ userForm }}
+</td>
+<td>
+	<input type="submit" value="Submit" />	
+</td>
+</form>
+
+</tr>
+   {% endif %}
+
+
+
+  
+  </table>
+</body>
+</html>

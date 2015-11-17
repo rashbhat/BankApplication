@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+    td {
+      text-align: center;
+      vertical-align: middle;
+     }
+  </style>
+ </head>
+<body>
+  <h1>Transaction Details</h1>
+  <table>
+    <th> Transaction ID </th> <th> Account ID </th> <th>Account Holder</th> <th>Transaction type</th> <th> Amount </th>
+    
+      {% for each in transactions %}
+      <tr>
+	<td >{{each.transaction_id}}</td>
+	<td >{{each.account_id_id}}</td>
+	<td >{{each.account_id.userBankMap_id.user_id.user_name}}</td>
+	<td >{{each.transaction_type}}</td>
+	<td >{{each.amount}}</td>
+     </tr>
+     {% endfor %}
+
+  
+  </table>
+</body>
+</html>

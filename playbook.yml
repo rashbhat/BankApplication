@@ -1,0 +1,12 @@
+- hosts: bank.local.com
+  vars:
+    http_port: 8000
+    max_clients: 200
+  remote_user: root
+  tasks:
+    - service: name=nginx state=started
+      become: yes
+      become_method: sudo
+
+    - name: run nginx
+      shell: uwsgi --ini bankUwsgi.ini & chdir=/home/rashmi/Documents/Workspace/Bank/
